@@ -53,7 +53,6 @@ Run the script with the following parameters:
 |----------------|-----------------------------------------------------------------------------|
 | `-Domain`       | Your target domain FQDN (e.g., talokan.local)                               |
 | `-OU`           | Organizational Unit name where the computer/dMSA will be created (e.g., BadOU) |
-| `-DMSAName`     | The name of the new dMSA to be created                                       |
 | `-LinkTargetDN` | The DN of the high-privileged account to impersonate                         |
 | `-LowPrivUser`  | A user with low privileges but `CreateChild` permissions on the OU          |
 | `-TargetHost`   | Host to test access before/after impersonation (e.g., DC6.Talokan.local)     |
