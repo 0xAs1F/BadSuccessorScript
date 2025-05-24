@@ -147,6 +147,3 @@ Write-Host "[>] $postCheck" -ForegroundColor Green
 Invoke-Expression $postCheck
 Read-Host "`n[+] Script complete. Press ENTER to exit."
 
-Write-Host "This is green" -ForegroundColor Green
-Write-Host "This is red" -ForegroundColor Red
-Write-Host "This is yellow" -ForegroundColor Yellow
