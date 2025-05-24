@@ -13,9 +13,10 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 
 ## 🔍 Recon
 
-### ✅ Akamai Script 
-
 - [Akamai Recon Script](https://github.com/akamai/BadSuccessor)
+-  ```powershell
+      .\Get-BadSuccessorOUPermissions.ps1
+   ```
 
 ---
 
