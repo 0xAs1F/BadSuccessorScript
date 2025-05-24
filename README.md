@@ -9,6 +9,8 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 - Requesting TGT and TGS using Rubeus
 - Demonstrating access before and after impersonation
 
+💀 Disclaimer : If you need Manual Steps Check this : https://github.com/0xAs1F/BadSuccessorScript/blob/main/ManualSteps.md
+
 ---
 
 ## 🎥 Demo
