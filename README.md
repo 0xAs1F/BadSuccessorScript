@@ -28,7 +28,7 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 
 ---
 
-## 📁 File Structure
+## 📁 Sample File Structure
 
 ```
 C:\Tools\
@@ -36,7 +36,7 @@ C:\Tools\
 └── Rubeus.exe
 ```
 
-Ensure both `Invoke-BadSuccessor.ps1` and `Rubeus.exe` are in the same directory.
+Ensure `Rubeus.exe` is in your Windows Path.
 
 ---
 
