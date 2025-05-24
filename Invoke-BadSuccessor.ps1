@@ -30,7 +30,7 @@ New-ADComputer -Name $ComputerName `
 Read-Host "`n[+] Computer account '$ComputerName' created. Press ENTER to derive AES256 key..."
 
 ### 2. Derive AES256 hash via Rubeus
-$RubeusPath = ".\Rubeus.exe"
+$RubeusPath = "Rubeus.exe"
 $hashCmd = "$RubeusPath hash /password:$ComputerPassword /user:$ComputerName`$ /domain:$Domain"
 Write-Host "[*] Running to derive AES256 hash:"
 Write-Host "    $hashCmd"
