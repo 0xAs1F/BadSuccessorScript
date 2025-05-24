@@ -16,27 +16,19 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 ### ✅ Tools
 - `Rubeus.exe`
   - Required to generate AES256 hash, request TGT/TGS, and inject tickets
-  - Must be placed in the **same folder** as the script
   - [GitHub - Rubeus](https://github.com/GhostPack/Rubeus)
 
 - **RSAT: Active Directory Tools**
   - Required for AD PowerShell cmdlets like `New-ADComputer`, `Set-ADServiceAccount`, etc.
   - Install with:
     ```powershell
-    Add-WindowsFeature RSAT-AD-PowerShell
+    Get-WindowsCapability -Name RSAT* -Online | Select-Object DisplayName, State
+    Add-WindowsCapability -Online -Name "Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0"
     ```
 
 ---
 
-## 📁 Sample File Structure
-
-```
-C:\Tools\
-├── Invoke-BadSuccessor.ps1
-└── Rubeus.exe
-```
-
-Ensure `Rubeus.exe` is in your Windows Path.
+### Ensure `Rubeus.exe` is in your Windows Path.
 
 ---
 
