@@ -11,6 +11,12 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 
 ---
 
+## 🎥 Demo
+
+![InvokeBadSuccessorScript Demo](https://github.com/user-attachments/assets/9bb07eb7-e00e-4fa3-96e5-d6248d8c5012)
+
+---
+
 ## 🔍 Recon
 
 - [Akamai Recon Script](https://github.com/akamai/BadSuccessor)
