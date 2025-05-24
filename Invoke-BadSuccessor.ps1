@@ -1,11 +1,14 @@
 param (
     [string]$Domain,
     [string]$OU,
-    [string]$DMSAName,
     [string]$LinkTargetDN,
     [string]$LowPrivUser,
     [string]$TargetHost
 )
+
+# Auto-generate DMSA name
+$DMSAName = "BadDMSA$((Get-Random -Minimum 1000 -Maximum 9999))"
+Write-Host "`n[*] Generated dMSA name: $DMSAName"
 
 $ouPath = "OU=$OU,DC=$($Domain -replace '\.', ',DC=')"
 $dmsaDN = "CN=$DMSAName,$ouPath"
