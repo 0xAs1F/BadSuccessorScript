@@ -25,7 +25,8 @@ New-ADComputer -Name $ComputerName `
     -AccountPassword (ConvertTo-SecureString -String $ComputerPassword -AsPlainText -Force) `
     -Enabled $true `
     -Path $ouPath `
-    -PassThru
+    -PassThru `
+    -Server $Domain
 
 Read-Host "`n[+] Computer account '$ComputerName' created. Press ENTER to derive AES256 key..."
 
