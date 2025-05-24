@@ -4,8 +4,8 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 
 - Creating a machine account (computer object)
 - Creating a dMSA
-- Setting the required delegation fields
 - Granting permissions
+- Setting the required delegation fields
 - Requesting TGT and TGS using Rubeus
 - Demonstrating access before and after impersonation
 
@@ -15,11 +15,12 @@ This PowerShell script automates the **BadSuccessor** attack technique, which le
 
 ### ✅ Tools
 - `Rubeus.exe`
-  - Required to generate AES256 hash, request TGT/TGS, and inject tickets
+  - Latest version - Required to generate AES256 hash, request TGT/TGS, use DMSA authentication and inject tickets
   - [GitHub - Rubeus](https://github.com/GhostPack/Rubeus)
 
 - **RSAT: Active Directory Tools**
   - Required for AD PowerShell cmdlets like `New-ADComputer`, `Set-ADServiceAccount`, etc.
+  - [Latest ADModule](https://learn.microsoft.com/en-us/powershell/module/activedirectory/?view=windowsserver2025-ps)
   - Install with:
     ```powershell
     Get-WindowsCapability -Name RSAT* -Online | Select-Object DisplayName, State
@@ -93,7 +94,7 @@ Each step includes an **interactive pause** so you can observe or validate chang
 
 ## 📎 References
 
-- [Akamia Blog](https://www.akamai.com/blog/security-research/abusing-dmsa-for-privilege-escalation-in-active-directory).
+- [Akamia Blog](https://www.akamai.com/blog/security-research/abusing-dmsa-for-privilege-escalation-in-active-directory)
 - [Rubeus GitHub](https://github.com/GhostPack/Rubeus)
 
 ---
