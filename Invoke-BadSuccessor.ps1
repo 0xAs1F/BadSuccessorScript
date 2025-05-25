@@ -145,5 +145,5 @@ Write-Host "`n[*] Testing access AFTER impersonation..." -ForegroundColor Green
 $postCheck = "dir \\$TargetHost\c$"
 Write-Host "[>] $postCheck" -ForegroundColor Green
 Invoke-Expression $postCheck
-Read-Host "`n[+] Script complete. Press ENTER to exit."
+Read-Host "`n[+] Script complete. Press ENTER to exit and run any post exploitation Tool."
 
